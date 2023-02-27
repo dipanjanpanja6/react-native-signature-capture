@@ -11,6 +11,9 @@ User would sign on the app and when you press the save button it returns the bas
 ### Android
 <img src="http://i.giphy.com/xT0GUKJFFkdDv25FNC.gif" />
 
+## Contribution
+Contributions are welcome and are greatly appreciated! Every little bit helps, and credit will always be given. Please read our [Pull request guidelines](https://github.com/RepairShopr/react-native-signature-capture/wiki/Pull-Request-Guidelines) before submitting your PR
+
 ## Install
 
 First you need to install react-native-signature-capture:
@@ -117,6 +120,13 @@ class CustomComponent extends Component {
 
 + **fileName**  : sets the generated file name, default is signature.png
 
++ **minStrokeWidth**  :  sets the min stroke line width (_Android only_)
+
++ **maxStrokeWidth**  :  sets the max stroke line width (_Android only_)
+
++ **backgroundColor**: Sets the background color of the component. Defaults to white. May be 'transparent'.
+
++ **strokeColor**: Sets the color of the signature. Defaults to black.
 
 ### Methods
 
@@ -165,6 +175,10 @@ class RNSignatureExample extends Component {
                     saveImageFileInExtStorage={false}
                     showNativeButtons={false}
                     showTitleLabel={false}
+                    backgroundColor="#ff00ff"
+                    strokeColor="#ffffff"
+                    minStrokeWidth={4}
+                    maxStrokeWidth={4}
                     viewMode={"portrait"}/>
 
                 <View style={{ flex: 1, flexDirection: "row" }}>

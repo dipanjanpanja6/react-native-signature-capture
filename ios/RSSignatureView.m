@@ -20,6 +20,8 @@
 	BOOL _showNativeButtons;
 	BOOL _showTitleLabel;
 	NSString * _fileName;
+	UIColor *_backgroundColor;
+	UIColor *_strokeColor;
 }
 
 @synthesize sign;
@@ -27,10 +29,12 @@
 
 - (instancetype)init
 {
-  _showBorder = YES;
+	_showBorder = YES;
 	_showNativeButtons = YES;
 	_showTitleLabel = YES;
 	_fileName = @"signature.png";
+	_backgroundColor = UIColor.whiteColor;
+	_strokeColor = UIColor.blackColor;
 	if ((self = [super init])) {
 		_border = [CAShapeLayer layer];
 		_border.strokeColor = [UIColor blackColor].CGColor;
@@ -67,6 +71,8 @@
 						initWithFrame: CGRectMake(0, 0, screen.width, screen.height)
 						context: _context];
 		sign.manager = manager;
+		sign.backgroundColor = _backgroundColor;
+		sign.strokeColor = _strokeColor;
 
 		[self addSubview:sign];
 
@@ -183,6 +189,12 @@
 
 - (void)setFileName:(NSString *)fileName {
     _fileName = fileName;
+- (void)setBackgroundColor:(UIColor*)backgroundColor {
+	_backgroundColor = backgroundColor;
+}
+
+- (void)setStrokeColor:(UIColor*)strokeColor {
+	_strokeColor = strokeColor;
 }
 
 -(void) onSaveButtonPressed {
