@@ -189,6 +189,7 @@
 
 - (void)setFileName:(NSString *)fileName {
     _fileName = fileName;
+}
 - (void)setBackgroundColor:(UIColor*)backgroundColor {
 	_backgroundColor = backgroundColor;
 }
