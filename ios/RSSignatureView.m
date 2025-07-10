@@ -224,6 +224,14 @@
 		}
 	}
 
+	// Composite background color behind signature
+	UIGraphicsBeginImageContextWithOptions(rawSignImage.size, YES, rawSignImage.scale);
+	[_backgroundColor setFill];
+	UIRectFill(CGRectMake(0, 0, rawSignImage.size.width, rawSignImage.size.height));
+	[rawSignImage drawInRect:CGRectMake(0, 0, rawSignImage.size.width, rawSignImage.size.height)];
+	UIImage *signImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+
 	// Convert UIImage object into NSData (a wrapper for a stream of bytes) formatted according to PNG spec
 	NSData *imageData = UIImagePNGRepresentation(signImage);
 	BOOL isSuccess = [imageData writeToFile:tempPath atomically:YES];
