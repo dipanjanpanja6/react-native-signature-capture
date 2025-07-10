@@ -205,7 +205,7 @@
 -(void) saveImage {
 	saveButton.hidden = YES;
 	clearButton.hidden = YES;
-	UIImage *signImage = [self.sign signatureImage: _rotateClockwise withSquare:_square];
+	UIImage *rawSignImage = [self.sign signatureImage: _rotateClockwise withSquare:_square];
 
 	saveButton.hidden = NO;
 	clearButton.hidden = NO;
